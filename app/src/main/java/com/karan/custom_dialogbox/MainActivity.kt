@@ -3,6 +3,7 @@ package com.karan.custom_dialogbox
 import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.ViewGroup
 import android.view.Window
 import android.widget.Button
 import android.widget.EditText
@@ -25,22 +26,23 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         binding.btncustom.setOnClickListener {
-            val Dialog = Dialog(this)
-            Dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-            Dialog.setContentView(R.layout.custom_dialogbox)
+            val dialog = Dialog(this)
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+            dialog.setContentView(R.layout.custom_dialogbox)
 
-            Dialog.setCancelable(false)
-            val btnno = Dialog.findViewById<Button>(R.id.btnno)
-            val btnyes = Dialog.findViewById<Button>(R.id.btnyes)
+            dialog.setCancelable(false)
+            val btnno = dialog.findViewById<Button>(R.id.btnno)
+            val btnyes = dialog.findViewById<Button>(R.id.btnyes)
+            dialog.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT)
             btnno.setOnClickListener {
-                Dialog.dismiss()
+                dialog.dismiss()
                 startActivity(intent)
             }
             btnyes.setOnClickListener {
-                Dialog.dismiss()
+                dialog.dismiss()
                 startActivity(intent)
             }
-            Dialog.show()
+            dialog.show()
 
         }
 
