@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">custom_dialogbox</string>
+    <string name="custom_dialog_box">Custom Dialog box</string>
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
+</resources>
